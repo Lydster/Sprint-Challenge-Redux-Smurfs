@@ -22,7 +22,7 @@ class SmurfList extends React.Component {
     addSmurf = e => {
         e.preventDefault();
         const { name, age, height } = this.state;
-        this.props.addNewSmurf({name, age, height});
+        this.props.addSmurf({name, age, height});
         this.setState({name: '', age: '', height: ''});
     }
 
@@ -61,6 +61,7 @@ class SmurfList extends React.Component {
                 onChange={this.handleChanges}
                 name="height"
             />
+            <button onClick={() => this.addSmurf()}>Add Smurf</button>
             </div>
         ) 
     }
